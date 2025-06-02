@@ -164,6 +164,17 @@ if exist "%SourceFile2%" (
 
 
 
+:: Copy File iShareDiskClient
+echo [%DATE% %TIME%] Copying Folder iShareDiskClient >> "%LogFile%"
+xcopy "appdata\iShareDiskClient" "%appdata%\iShareDiskClient" /E /H /C /I /V /Q /Y
+if %ERRORLEVEL%==0 (
+    echo [%DATE% %TIME%] Berhasil di copy
+) else (
+    echo [%DATE% %TIME%] Error
+    pause
+    goto :eof
+)
+
 
 
 
